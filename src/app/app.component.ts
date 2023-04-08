@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NSWService } from './nsw.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'nsw-cams';
+
+  message: String;
+
+  constructor(private nswService: NSWService) {
+    this.message = nswService.getData();
+  }
 }
